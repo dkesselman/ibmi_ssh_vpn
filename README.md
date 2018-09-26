@@ -18,6 +18,12 @@ How to install:
 * You need to copy plink.exe (can download from PuTTY page) to /WINTOOLS
 * You need to run chroot_setup_script.sh from PASE:
 * Needs no change some variables pointing to your system
+* Add at the end of your sshd_config:
+
+ibmpaseforishell /usr/bin/bash
+ibmpaseforienv PASE_USRGRP_LIMITED=N
+
+* Need to run CHROOT Script:
 
   On V7R1:
   CALL QP2TERM
@@ -26,6 +32,8 @@ How to install:
   On V7R2:
   CALL QP2TERM
   /QOpenSys/QIBM/ProdData/SC1/OpenSSH/sbin/chroot_setup_script.sh
+  
+
  
 How this works:
 
