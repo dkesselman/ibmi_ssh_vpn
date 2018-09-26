@@ -1,20 +1,26 @@
 #!/usr/bin/bash
-#CONSTANTS
+
+#CONSTANTS & VARIABLES
 QIBM_MULTI_THREADED='Y'
 export QIBM_MULTI_THREADED
 
 GROUP="GRPFREE"
 USRCLS="*PGMR"
 SPCAUT="*JOBCTL"
-CHROOTCMD="/QOpenSys/QIBM/ProdData/SC1/OpenSSH/openssh-4.7p1/sbin/chroot_setup_script.sh"
-CHROOTPATH="/QOpenSys/QIBM/UserData/SC1/OpenSSH/openssh-4.7p1/chroot/"
 DOTFILES="/dotfiles/.bash*"
 WINTOOLS="/WINTOOLS/*"
-HOST="esselware.dynu.com"
+HOST="myremote-server-ip"
 TELNETPORT="8023"
-REMOTEPORT="8443"
-
+REMOTEPORT="443"
 HOMEPATH="$CHROOTPATH./home/$1"
+
+# This is for IBMi V7R1
+CHROOTCMD="/QOpenSys/QIBM/ProdData/SC1/OpenSSH/openssh-4.7p1/sbin/chroot_setup_script.sh"
+CHROOTPATH="/QOpenSys/QIBM/UserData/SC1/OpenSSH/openssh-4.7p1/chroot/"
+###############################################################
+# This is for IBMi V7R2
+#CHROOTCMD="/QOpenSys/QIBM/ProdData/SC1/OpenSSH/sbin/chroot_setup_script.sh"
+#CHROOTPATH="/QOpenSys/QIBM/UserData/SC1/OpenSSH/chroot/"
 
 echo '----------------------------------------------------------------------------------------------'
 echo 'Begining'
