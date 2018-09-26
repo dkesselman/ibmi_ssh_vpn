@@ -16,13 +16,23 @@ How to install:
 * On V7R2 o V7R3 you need to change some paths from OpenSSH and CHROOT
 * You need to copy your favorite .bash_profile, .profile, .bashrc to /dotfiles
 * You need to copy plink.exe (can download from PuTTY page) to /WINTOOLS
+* You need to run chroot_setup_script.sh from PASE:
+
+  On V7R1:
+  CALL QP2TERM
+  /QOpenSys/QIBM/ProdData/SC1/OpenSSH/openssh-4.7p1/sbin/chroot_setup_script.sh
+  
+  On V7R2:
+  CALL QP2TERM
+  /QOpenSys/QIBM/ProdData/SC1/OpenSSH/sbin/chroot_setup_script.sh
  
 How this works:
 
-* Creates user with his own library (*PUBLIC *EXCLUDE)
+* Creates user profile with his own library (*PUBLIC *EXCLUDE)
 * Creates chrooted home directory
-* Copies some dotfiles so you can use BASH with colours and cool stuff like that
+* Copies some dotfiles so you can use BASH with colours, alias and cool stuff like that
 * Creates a public and private key using SSH-KEYGEN command, then renames public key to authorized_keys
+(Note, if you want to use public/private keys you need to convert to PuTTY format using PuTTYGEN and change plink.exe line)
 * Copies plink.exe from /WINTOOLS to a temporary directory
 * Creates a .CMD file with plink command so you can create a tunneled connection to the IBMi
 * Creates a .ZIP file with all these files
