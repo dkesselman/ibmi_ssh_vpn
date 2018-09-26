@@ -17,6 +17,7 @@ How to install:
 * You need to copy your favorite .bash_profile, .profile, .bashrc to /dotfiles
 * You need to copy plink.exe (can download from PuTTY page) to /WINTOOLS
 * You need to run chroot_setup_script.sh from PASE:
+* Needs no change some variables pointing to your system
 
   On V7R1:
   CALL QP2TERM
@@ -46,7 +47,12 @@ Just need to copy syslog.conf on /QOpenSys/etc
 
 How to create a user:
 
-From PASE with "CALL QP2TERM" or connected from SSH run ./ibmi_ssh_vpn.sh USERPROFILE PASSWORD 'User Profile Description'
+From PASE with "CALL QP2TERM" or connected from SSH run 
+
+./ibmi_ssh_vpn.sh USERPROFILE PASSWORD 'User Profile Description'
+
+Now you can give the .ZIP on IBMi directory  to the remote user. 
+He needs to unzip on C:\IBMi\ and run USERPROFILE.cmd  to connect to your system
 
 And that's it.
 
